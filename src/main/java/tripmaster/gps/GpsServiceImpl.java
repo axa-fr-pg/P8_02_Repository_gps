@@ -45,6 +45,7 @@ public class GpsServiceImpl implements GpsService {
 		List<AttractionData> dataList = new ArrayList<AttractionData>();
 		gpsUtil.getAttractions().stream().forEach(attraction -> {
 			AttractionData data = new AttractionData();
+			data.id = attraction.attractionId;
 			data.name = attraction.attractionName;
 			data.city = attraction.city;
 			data.state = attraction.state;

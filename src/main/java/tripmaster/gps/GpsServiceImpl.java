@@ -26,7 +26,7 @@ public class GpsServiceImpl implements GpsService {
 	public List<User> trackAllUserLocations(List<User> userList) {
 		logger.debug("trackAllUserLocations with list of size = " + userList.size());
 		userList.stream().parallel().forEach(user -> {
-			VisitedLocation visitedLocation = gpsUtil.getUserLocation(user.getUserId());
+			VisitedLocation visitedLocation = gpsUtil.getUserLocation(user.userId);
 			user.addToVisitedLocations(newVisitedLocationData(visitedLocation));
 		});
 		return userList;

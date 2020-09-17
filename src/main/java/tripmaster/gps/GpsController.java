@@ -14,6 +14,9 @@ import tripmaster.common.attraction.AttractionData;
 import tripmaster.common.location.VisitedLocationData;
 import tripmaster.common.user.User;
 
+/**
+ * API class for gps methods
+ */
 @RestController
 public class GpsController {
 

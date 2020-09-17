@@ -7,6 +7,9 @@ import org.springframework.context.annotation.Configuration;
 
 import gpsUtil.GpsUtil;
 
+/**
+ * Bean class to access gpsUtil library
+ */
 @Configuration
 public class GpsUtilBean {
 

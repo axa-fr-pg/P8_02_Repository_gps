@@ -16,12 +16,22 @@ import tripmaster.common.location.LocationData;
 import tripmaster.common.location.VisitedLocationData;
 import tripmaster.common.user.User;
 
+/**
+ * Class for gps services. Implements GpsService interface.
+ * @see tripmaster.gps.GpsService
+ */
 @Service
 public class GpsServiceImpl implements GpsService {
 
 	private Logger logger = LoggerFactory.getLogger(GpsServiceImpl.class);
 	@Autowired private GpsUtil gpsUtil;
 
+	/**
+	 * Registers the current location for all users of the given list.
+	 * @param userList of all users for whom the current location shall be registered.
+	 * @return List of users with updated visited locations history.
+	 * @see gpsUtil.getUserLocation
+	 */
 	@Override
 	public List<User> trackAllUserLocations(List<User> userList) {
 		logger.debug("trackAllUserLocations with list of size = " + userList.size());
@@ -32,6 +42,12 @@ public class GpsServiceImpl implements GpsService {
 		return userList;
 	}
 
+	/**
+	 * Gets current user location based on gpsUtil.
+	 * @param userIdString name of the user for whom the location shall be determined.
+	 * @return VisitedLocationData containing the current location of the user.
+	 * @see gpsUtil.getUserLocation
+	 */
 	@Override
 	public VisitedLocationData getCurrentUserLocation(String userIdString) {
 		logger.debug("getUserLocation with userId = " + userIdString);
@@ -39,6 +55,11 @@ public class GpsServiceImpl implements GpsService {
 		return newVisitedLocationData(gpsUtil.getUserLocation(userId));
 	}
 	
+	/**
+	 * Gets the list of all known attractions in the ecosystem
+	 * @return List of AttractionData containing one entry for each existing attraction.
+	 * @see gpsUtil.getAttractions
+	 */
 	@Override
 	public List<AttractionData> getAllAttractions() {
 		logger.debug("getAllAttractions");
@@ -56,6 +77,11 @@ public class GpsServiceImpl implements GpsService {
 		return dataList;
 	}
 	
+	/**
+	 * Converts a visited location to the VisitedLocationData structure.
+	 * @param visitedLocation of type VisitedLocation.
+	 * @return VisitedLocationData containing the current location of the user.
+	 */
 	@Override
 	public VisitedLocationData newVisitedLocationData(VisitedLocation visitedLocation) {
 		return new VisitedLocationData(visitedLocation.userId,

@@ -7,6 +7,10 @@ import tripmaster.common.attraction.AttractionData;
 import tripmaster.common.location.VisitedLocationData;
 import tripmaster.common.user.User;
 
+/**
+ * Interface for gps services
+ * @see implements tripmaster.gps.GpsServiceImpl
+ */
 public interface GpsService {
 
 	List<User> trackAllUserLocations(List<User> userList);

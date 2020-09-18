@@ -44,7 +44,7 @@ public class GpsServiceImpl implements GpsService {
 
 	/**
 	 * Gets current user location based on gpsUtil.
-	 * @param userIdString name of the user for whom the location shall be determined.
+	 * @param userIdString of the user for whom the location shall be determined.
 	 * @return VisitedLocationData containing the current location of the user.
 	 * @see gpsUtil.getUserLocation
 	 */
@@ -56,7 +56,7 @@ public class GpsServiceImpl implements GpsService {
 	}
 	
 	/**
-	 * Gets the list of all known attractions in the ecosystem
+	 * Gets the list of all known attractions in the ecosystem.
 	 * @return List of AttractionData containing one entry for each existing attraction.
 	 * @see gpsUtil.getAttractions
 	 */

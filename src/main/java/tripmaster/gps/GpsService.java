@@ -9,7 +9,7 @@ import tripmaster.common.user.User;
 
 /**
  * Interface for gps services
- * @see implements tripmaster.gps.GpsServiceImpl
+ * @see tripmaster.gps.GpsServiceImpl
  */
 public interface GpsService {
 
